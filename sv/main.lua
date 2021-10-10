@@ -33,5 +33,4 @@ function hasPermission(xPlayer)
 		TriggerClientEvent('esx:showNotification', xPlayer.source, 'No permission.')
 		return false
 	end
-	
 end
