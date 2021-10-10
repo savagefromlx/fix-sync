@@ -9,6 +9,7 @@ RegisterNetEvent('fix-sync:GetVehicleToFix', function()
 end)
 
 RegisterNetEvent('fix-sync:FixTheVehicle', function(vehId)
+	local debug = true
 	if vehId ~= nil then
     	if NetworkDoesNetworkIdExist(vehId) then
 	        local vehicle = NetToEnt(vehId)
@@ -16,8 +17,10 @@ RegisterNetEvent('fix-sync:FixTheVehicle', function(vehId)
 				SetVehicleEngineHealth(vehicle, 1000)
 				SetVehicleFixed(vehicle)
 				SetVehicleDirtLevel(vehicle, 0.0)
-
-				print('Sync | Fixed vehicle with plate ' .. GetVehicleNumberPlateText(vehicle))
+				SetVehicleOnGroundProperly(vehicle)
+				if debug then
+					print('Sync | Fixed vehicle with plate ' .. GetVehicleNumberPlateText(vehicle))
+				end
 	        end
 	    end
 	end
