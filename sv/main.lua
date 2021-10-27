@@ -20,7 +20,7 @@ RegisterServerEvent('fix-sync:TrowEvent', function(vehId)
 						local ped = GetPlayerPed(src)
 						local plyCoords = GetEntityCoords(ped)
 						if #(entityCoords - plyCoords) <= 200 then
-							print('Event fired for player: ' .. GetPlayerName(src))
+							--print('Event fired for player: ' .. GetPlayerName(src))
 							TriggerClientEvent('fix-sync:FixTheVehicle', src, vehId)
 						end
 					end
