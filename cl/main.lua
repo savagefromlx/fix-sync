@@ -9,7 +9,7 @@ RegisterNetEvent('fix-sync:GetVehicleToFix', function()
 end)
 
 RegisterNetEvent('fix-sync:FixTheVehicle', function(vehId)
-	local debug = true
+	local debug = false
 	if vehId ~= nil then
     	if NetworkDoesNetworkIdExist(vehId) then
 	        local vehicle = NetToEnt(vehId)
